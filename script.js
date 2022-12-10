@@ -1,3 +1,5 @@
+const userInput = document.querySelector("#userinput");
+const btn = document.querySelector("#btn");
 // building a letter frequency
 const letterFrequency = (phrase) => {
   console.log(phrase);
@@ -31,13 +33,18 @@ const wordFrequency = (phrase) => {
   }
   return frequency;
 };
+
 function getNshow() {
-  let userInput = document.querySelector("#userinput");
-  console.log(wordFrequency(userInput.value));
+  if (userInput.value === "") {
+    alert("write");
+  } else {
+    console.log(wordFrequency(userInput.value));
+    userInput.value = ''
+  }
 }
 
-
-// run funciton when enter clicked 
-const btn = document.querySelector("#btn")
-
-console.log(btn)
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    btn.click();
+  }
+});
