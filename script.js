@@ -11,7 +11,7 @@ const letterFrequency = (phrase) => {
     if (letter in frequency) {
       frequency[letter]++;
     } else {
-      frequenc[letter] = 1;
+      frequency[letter] = 1;
     }
   }
   return frequency;
@@ -35,3 +35,9 @@ function getNshow() {
   let userInput = document.querySelector("#userinput");
   console.log(wordFrequency(userInput.value));
 }
+
+
+// run funciton when enter clicked 
+const btn = document.querySelector("#btn")
+
+console.log(btn)
